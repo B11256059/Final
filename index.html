@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page with Sections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        section {
+            padding: 20px;
+            display: none;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+        
+        ul {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>蠟筆小新</h1>
+        <nav>
+            <ul>
+                <li><a href="#大綱">大綱</a></li>
+                <li><a href="#故事簡介">故事簡介</a></li>
+                <li><a href="#角色介紹">角色介紹</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="大綱">
+        <p>原定位為成人取向的青年漫畫，早期有較多性暗示的描述，於1990年夏天開始連載。然而在動畫版於1992年推出後，大受家庭觀眾歡迎，逐漸轉變為閤家觀賞的作品，因此不得不降低性暗示的內容比例。這也使得它的受眾越來越廣泛，在此背景下於1993年推出首部電影版。<br><br>小新是個性張揚搞笑活潑的代表性動畫人物之一，內容是平實地描寫日本一戶核心家庭日常生活的寫照，而笑點多半是小新總是搞不清楚狀況而出的差錯或是惹人發怒的情形；但事實上小新有時也會展現出非同年齡層小孩的表現，就好比跟朋友間的堅定友誼，或在家人、社區，甚至是春日部面臨危機時，都展現出超乎常人的勇氣與智慧。在日本，電視動畫版收視率常高居前10名。足以說明在日本受歡迎的程度。<br><br>故事的性質是走喜劇、搞笑路線。但也有像漫畫單行本第47本德郎醫生死亡這樣的嚴肅劇情。刊名為蠟筆小新，小新是主角的名字，全名為野原新之助，蠟筆是幼稚園小朋友常用的繪圖用具，以表示作品是描述幼稚園時期的小新。此外，漫畫29卷和31卷中有升上小學1年級的小新，名稱則改為「鉛筆小新」。</p>
+    </section>
+
+    <section id="故事簡介">
+        <p>故事舞台是在日本埼玉縣春日部市，一位正在「雙葉幼稚園」學習的五歲小孩野原新之助，在日常生活中發生的事。<br><br>起初，小新與父親野原廣志和母親野原美冴組成一個3人家庭，從小房子搬入兩層樓平房。隨著故事發展，家中添加了一隻被遺棄的妹妹「小葵」與小狗「小白」。車子也換了兩次，家裡一度因為被氣爆炸毀，而暫時搬入胯下痛公寓一陣子，後來房屋修繕完畢，全家才搬回原住處。<br><br>有一陣子美冴的妹妹小山夢冴因為失業暫居野原家二樓，搬出去住在他們曾經住過的胯下痛公寓，同時劇裡登場的通訊工具逐漸從最初尚未有手機的年代轉變成智慧型手機。</p>
+    </section>
+
+    <section id="角色介紹">
+        <p>
+            <ul>野原新之助</ul>
+            <ul>野原廣志</ul>
+            <ul>小白</ul>
+            <ul>野原美冴</ul>
+            <ul>野原向日葵</ul>
+            <ul>風間徹</ul>
+            <ul>阿呆</ul>
+            <ul>佐藤正男</ul>
+            <ul>櫻田妮妮</ul>
+        </p>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var sections = document.querySelectorAll("section");
+            var navLinks = document.querySelectorAll("nav a");
+
+            navLinks.forEach(function(link) {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    var targetId = this.getAttribute("href").substring(1);
+                    sections.forEach(function(section) {
+                        section.style.display = "none";
+                        if (section.id === targetId) {
+                            section.style.display = "block";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
